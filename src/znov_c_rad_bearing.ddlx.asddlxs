@@ -1,0 +1,181 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{
+                typeName: 'Radial Bearings',
+                typeNamePlural: 'Radial Bearing',
+                title:{
+                    value: 'BearingId'
+                },
+                imageUrl: 'Url'
+}
+annotate view ZNOV_C_RAD_bearing with
+{
+  @UI.facet: [ {
+                id: 'GeneralInfo',
+                label: 'General Information',
+                type: #COLLECTION,
+                position: 10
+              },
+              {
+                id: 'AdminInfo',
+                label: 'Admin Information',
+                type: #COLLECTION,
+                position: 20
+              },
+              { id: 'Gen',
+                label: 'General',
+                type: #IDENTIFICATION_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 10,
+                targetQualifier: 'Gen'
+              },
+              {
+                id: 'MainDimen',
+                label: 'Main Dimensions',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 20,
+                targetQualifier: 'MainDimen'
+              },
+              {
+                id: 'FatigueLimit',
+                label: 'Fatigue Limit',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 30,
+                targetQualifier: 'FatigueLimit'
+              },
+              {
+                id: 'RatedLoad',
+                label: 'Rated Load',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 40,
+                targetQualifier: 'RatedLoad'
+              },
+              {
+                id: 'RotationFrequency',
+                label: 'Rotation Frequency',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 50,
+                targetQualifier: 'RotationFrequency'
+              },
+              {
+                id: 'Dimen',
+                label: 'Dimensions',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 60,
+                targetQualifier: 'Dimen'
+              },
+              {
+                id: 'StopRoundingDimensions',
+                label: 'Stop and Rounding Dimensions',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 70,
+                targetQualifier: 'StopRoundingDimensions'
+              },
+              {
+                id: 'CalculatedCoefficients',
+                label: 'Calculated Coefficients',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 80,
+                targetQualifier: 'CalculatedCoefficients'
+              },
+              {
+                id: 'CreateInfo',
+                label: 'Create Info',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'AdminInfo',
+                position: 10,
+                targetQualifier: 'CreateInfo'
+              },
+              {
+                id: 'ChangeInfo',
+                label: 'Change Info',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'AdminInfo',
+                position: 20,
+                targetQualifier: 'ChangeInfo'
+              }
+              ]
+  @UI.hidden: true
+  MachineUuid;
+  @UI: { identification: [{label: 'Machine ID', position: 10, qualifier: 'Gen' }],
+         selectionField: [{position: 10 }] }
+  MachineId;
+  @UI.hidden: true
+  BearingUuid;
+  @UI: { lineItem:        [ { label: 'Bearing ID', position: 10 } ],
+         identification:  [ { label: 'Bearing ID', position: 20, qualifier: 'Gen' } ],
+         selectionField: [{position: 20 }]  }
+  BearingId;
+  @UI: { lineItem:        [ { label: 'Weight', position: 30 } ],
+         identification:  [ { label: 'Weight', position: 30, qualifier: 'Gen' } ],
+         dataPoint: { title: 'Weight' }  }
+  Weight;
+  @UI: { lineItem:        [ { label: 'Quantity', position: 20 } ],
+         identification:  [ { label: 'Quantity', position: 40, qualifier: 'Gen' } ],
+         dataPoint: { title: 'Quantity' }  }
+  Quantity;
+  @UI: { lineItem:        [ { label: 'd', position: 40 } ],
+         fieldGroup:      [ { label: 'd', position: 10, qualifier: 'MainDimen' } ]  }
+  MainDInside;
+  @UI: { lineItem:        [ { label: 'D', position: 50} ],
+         fieldGroup:      [ { label: 'D', position: 20, qualifier: 'MainDimen' } ]  }
+  MainDOutside;
+  @UI: { lineItem:        [ { label: 'B', position: 60 } ],
+         fieldGroup:      [ { label: 'B', position: 30, qualifier: 'MainDimen' } ]  }
+  MainB;
+  @UI: { fieldGroup:  [ { label: 'Dinamic C (kH)', position: 10, qualifier: 'RatedLoad' } ]  }
+  DinamicLoadCapacityC;
+  @UI: { fieldGroup:  [ { label: 'Static C0 (kH)', position: 20, qualifier: 'RatedLoad' } ]  }
+  StaticLoadCapacityC0;
+  @UI: { fieldGroup: [ { label: 'Pu (kH)', position: 10, qualifier: 'FatigueLimit' }]  }
+  LimitSettingStrenghtPu;
+  @UI: { fieldGroup: [ { label: 'Nominal (rev/min)', position: 10, qualifier: 'RotationFrequency' }] }
+  NomRotFrequency;
+  @UI: { fieldGroup: [ { label: 'Limit (rev/min)' , position: 20, qualifier: 'RotationFrequency'}]  }
+  LimRotFrequency;
+  @UI: { fieldGroup: [ { label: 'd1', position: 10, qualifier: 'Dimen' }]  }
+  D1Inside;
+  @UI: { fieldGroup: [ { label: 'D1', position: 20, qualifier: 'Dimen' } ]  }
+  D1Outside;
+  @UI: { fieldGroup: [ { label: 'R12', position: 30, qualifier: 'Dimen' } ]  }
+  R12;
+  @UI: { fieldGroup: [ { label: 'da', position: 10, qualifier: 'StopRoundingDimensions' } ]  }
+  DaInside;
+  @UI: { fieldGroup: [ { label: 'Da', position: 20, qualifier: 'StopRoundingDimensions' } ]  }
+  DaOutside;
+  @UI: { fieldGroup: [ { label: 'Ra', position: 30, qualifier: 'StopRoundingDimensions' }]  }
+  Ra;
+  @UI: { fieldGroup: [ { label: 'Kr', position: 10, qualifier: 'CalculatedCoefficients' }] }
+  Kr;
+  @UI: { fieldGroup: [ { label: 'F0', position: 20, qualifier: 'CalculatedCoefficients'}] }
+  F0;
+  @UI: { lineItem:   [ { label: 'Created By', position: 70 } ],
+         fieldGroup: [ { label: 'Created By', position: 10, qualifier: 'CreateInfo' }]  }
+  CreatedBy;
+  @UI: { lineItem:   [ { label: 'Created At', position: 80 } ],
+         fieldGroup: [ { label: 'Created At', position: 20, qualifier: 'CreateInfo' }]  }
+  CreatedAt;
+  @UI: { lineItem:   [ { label: 'Last Changed By', position: 90 } ],
+         fieldGroup: [ { label: 'Last Changed By', position: 10, qualifier: 'ChangeInfo' }]  }
+  LastChangedBy;
+  @UI: { lineItem:   [ { label: 'Last Changed At', position: 100 } ],
+         fieldGroup: [ { label: 'Last Changed At', position: 20, qualifier: 'ChangeInfo' }]  }
+  LastChangedAt;
+
+}

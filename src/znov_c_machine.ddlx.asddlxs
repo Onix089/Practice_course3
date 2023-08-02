@@ -1,0 +1,140 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{
+                typeName: 'Machine',
+                typeNamePlural: 'Machines',
+                title:{ type: #STANDARD, value: 'MachineType' },
+                description:{ value:'MachineId' },
+               imageUrl: 'Url'
+}
+annotate view ZNOV_C_machine with
+{
+  @UI.facet: [
+              {
+                id: 'GeneralInfo',
+                label: 'General Information',
+                type: #COLLECTION,
+                position: 10
+              },
+              {
+                id: 'AdminInfo',
+                label: 'Admin Information',
+                type: #COLLECTION,
+                position: 20
+              },
+              {
+                id: 'RadBearing',
+                purpose: #STANDARD,
+                type: #LINEITEM_REFERENCE,
+                label: 'Radial Bearing',
+                position: 30,
+                targetElement: '_Bearing'
+              },
+              { id: 'Gen',
+                label: 'General',
+                type: #IDENTIFICATION_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 10,
+                targetQualifier: 'Gen'
+              },
+              {
+                id: 'Characteristic',
+                label: 'Characteristics',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'GeneralInfo',
+                position: 20,
+                targetQualifier: 'Charact'
+              },
+              {
+                id: 'CreateInfo',
+                label: 'Create Info',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'AdminInfo',
+                position: 10,
+                targetQualifier: 'CreateInfo'
+              },
+              {
+                id: 'ChangeInfo',
+                label: 'Change Info',
+                type: #FIELDGROUP_REFERENCE,
+                purpose: #STANDARD,
+                parentId: 'AdminInfo',
+                position: 20,
+                targetQualifier: 'ChangeInfo'
+              }
+              ]
+  @UI:{
+  hidden: true
+  }
+  MachineUuid;
+  @UI:{
+        lineItem: [{label: 'Machine ID', position:10 }],
+        selectionField: [{position: 10 }],
+        identification: [{qualifier: 'Gen', position: 10, label: 'Machine ID' }]
+  }
+  MachineId;
+  @UI:{
+        lineItem: [{label: 'Machine Type', position:20 }],
+        selectionField: [{position: 20 }],
+        identification: [{qualifier: 'Gen', position: 20, label: 'Machine Type' }]
+  }
+  MachineType;
+  @UI:{
+        lineItem:   [{label: 'Phase', position:30, criticality: 'Criticality' },
+                     { type: #FOR_ACTION, dataAction: 'acceptMachine', label: 'Accept Machine' },
+                     { type: #FOR_ACTION, dataAction: 'rejectMachine', label: 'Reject Machine' }
+                     ],
+        selectionField: [{position: 30 }],
+        identification: [{qualifier: 'Gen', position: 30, label: 'Phase', criticality: 'Criticality' },
+                     { type: #FOR_ACTION, dataAction: 'acceptMachine', label: 'Accept Machine' },
+                     { type: #FOR_ACTION, dataAction: 'rejectMachine', label: 'Reject Machine' }],
+        dataPoint: { title: 'Phase', criticality: 'Criticality' }
+  }
+  Phase;
+  @UI:{
+        lineItem: [{position:40 }],
+        fieldGroup: [{qualifier: 'Charact', position: 10, label: 'Weight'}]
+  }
+  MachineWeight;
+  @UI:{
+        lineItem: [{position:50 }],
+        fieldGroup: [{qualifier: 'Charact', position: 20, label: 'Height'}]
+  }
+  MachineHeight;
+  @UI:{
+        lineItem: [{position:60 }],
+        fieldGroup: [{qualifier: 'Charact', position: 30, label: 'Width'}]
+  }
+  MachineWidth;
+  @UI:{
+        lineItem: [{position:70 }],
+        fieldGroup: [{qualifier: 'Charact', position: 40, label: 'Depth'}]
+  }
+  MachineDepth;
+  @UI:{
+        lineItem: [{label:'Created By',position:80 }],
+        fieldGroup: [{qualifier: 'CreateInfo', position: 10, label: 'Created By'}]
+  }
+  CreatedBy;
+  @UI:{
+        lineItem: [{label:'Created At',position:90 }],
+        fieldGroup: [{qualifier: 'CreateInfo', position: 20, label: 'Created At'}]
+  }
+  CreatedAt;
+  @UI:{
+        lineItem: [{label:'Last Changed By',position:100 }],
+        fieldGroup: [{qualifier: 'ChangeInfo', position: 30, label: 'Last Changed By'}]
+  }
+  LastChangedBy;
+  @UI:{
+        lineItem: [{label:'Last Changed At',position:110 }],
+        fieldGroup: [{qualifier: 'ChangeInfo', position: 40, label: 'Last Changed At'}]
+  }
+  LastChangedAt;
+    @UI:{
+        selectionField: [{element: '_Bearing.BearingId',position: 40 }]
+  }
+  _Bearing;
+}

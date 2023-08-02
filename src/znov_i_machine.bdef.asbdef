@@ -1,0 +1,102 @@
+managed;
+//strict ( 1 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZNOV_I_machine alias Machine
+implementation in class znov_cls_machine unique
+persistent table znov_machine
+lock master
+//authorization master ( instance )
+etag master LastChangedAt
+{
+  create;
+  update ( features : instance );
+  delete;
+  association _Bearing { create (features : instance); }
+
+  field ( readonly, numbering : managed ) MachineUuid;
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, Phase;
+  field ( mandatory ) MachineDepth, MachineHeight, MachineId, MachineWeight, MachineWidth, SizeUom;
+
+  determination setIconUrl on save { field MachineType; create; }
+  determination setStartPhase on save { create; }
+
+  action ( features : instance ) acceptMachine result [1] $self;
+  action ( features : instance ) rejectMachine result [1] $self;
+
+  validation validateMachine on save { field MachineId, MachineType; create; }
+  validation validateCharacteristics on save { field MachineDepth, MachineHeight, MachineWeight, SizeUom, MachineWidth; create; }
+  mapping for znov_machine
+    {
+      CreatedAt     = created_at;
+      CreatedBy     = created_by;
+      LastChangedAt = last_changed_at;
+      LastChangedBy = last_changed_by;
+      MachineDepth  = machine_depth;
+      MachineHeight = machine_height;
+      MachineId     = machine_id;
+      MachineType   = machine_type;
+      url           = url;
+      MachineUuid   = machine_uuid;
+      MachineWeight = machine_weight;
+      MachineWidth  = machine_width;
+      SizeUom       = sizeuom;
+      Phase         = phase;
+    }
+
+}
+
+define behavior for ZNOV_I_RAD_bearing alias Bearing
+implementation in class znov_cls_rad_bearing unique
+persistent table znov_rad_bearing
+lock dependent by _Machine
+//authorization dependent by _Machine
+etag master LastChangedAt
+{
+  update (features : instance);
+  delete (features : instance);
+  association _Machine;
+
+  field ( readonly, numbering : managed ) BearingUuid;
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, MachineUuid, MachineId;
+  field ( mandatory ) D1Inside, D1Outside, DaInside, DaOutside, DinamicLoadCapacityC, f0, Kr, LimRotFrequency, LimitSettingStrenghtPu, MainB, MainDInside,
+  MainDOutside, NomRotFrequency, Quantity, r12, Sizeuom, Ra, StaticLoadCapacityC0, Weight;
+
+  determination SetMachineId on save { create; }
+
+  validation validateBearing on save { field BearingId, D1Inside, D1Outside, DaInside, DaOutside, DinamicLoadCapacityC, f0, Kr, LimRotFrequency, LimitSettingStrenghtPu, MainB, MainDInside,
+  MainDOutside, NomRotFrequency, Quantity, r12, Sizeuom, Ra, StaticLoadCapacityC0, Weight; create; }
+
+  mapping for znov_rad_bearing
+    {
+      BearingId              = bearing_id;
+      BearingUuid            = bearing_uuid;
+      CreatedAt              = created_at;
+      CreatedBy              = created_by;
+      D1Inside               = d1_inside;
+      D1Outside              = d1_outside;
+      DaInside               = da_inside;
+      DaOutside              = da_outside;
+      DinamicLoadCapacityC   = dinamic_load_capacity_c;
+      f0                     = f0;
+      Kr                     = kr;
+      LastChangedAt          = last_changed_at;
+      LastChangedBy          = last_changed_by;
+      LimRotFrequency        = lim_rot_frequency;
+      LimitSettingStrenghtPu = limit_setting_strenght_pu;
+      MachineUuid            = machine_uuid;
+      MainB                  = main_b;
+      MainDInside            = main_d_inside;
+      MainDOutside           = main_d_outside;
+      NomRotFrequency        = nom_rot_frequency;
+      r12                    = r12;
+      Ra                     = ra;
+      StaticLoadCapacityC0   = static_load_capacity_c0;
+      Url                    = url;
+      Weight                 = weight;
+      Quantity               = quantity;
+      MachineId              = machine_id;
+      Sizeuom = sizeuom;
+    }
+
+
+}

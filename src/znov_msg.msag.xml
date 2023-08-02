@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZNOV_MSG</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>message class</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Machine ID can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Machine Type can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Weight can no be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Height can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Width can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Depth can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Unit of measure can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Machine with this Machine ID &apos;&amp;1&apos; have been already exist.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Bearing Id can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Weight can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Quantity can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>d can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>D can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>B can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Pu can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Dinamic C can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Static C0 can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Nominal Rotation Frequency can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Limit Rotation Frequency can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>d1 can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>D1 can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>R12 can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>da can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Da can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Ra can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Kr can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>F0 can not be empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZNOV_MSG</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Bearing with this Bearing Id &apos;&amp;1&apos; in this Machine Id &apos;&amp;2&apos; already exist.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

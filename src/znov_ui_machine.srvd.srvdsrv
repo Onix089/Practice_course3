@@ -1,0 +1,5 @@
+@EndUserText.label: 'service defenition for machine'
+define service ZNOV_UI_Machine {
+  expose ZNOV_C_machine;
+  expose ZNOV_C_RAD_bearing;
+}

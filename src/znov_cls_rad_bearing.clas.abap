@@ -1,0 +1,5 @@
+CLASS znov_cls_rad_bearing DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF znov_i_machine.
+ENDCLASS.
+
+CLASS znov_cls_rad_bearing IMPLEMENTATION.
+ENDCLASS.
